@@ -1,0 +1,17 @@
+var rectangle = function(a,b){
+
+  return {
+    getArea:function(){
+      return a*b;
+    },
+    getPermieter:function(){
+      return 2*(a+b);
+    }
+    
+  }
+}
+
+var next = rectangle(2,5);
+
+console.log(next.getArea());
+console.log(next.getPermieter())
