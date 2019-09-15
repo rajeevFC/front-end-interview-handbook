@@ -15,3 +15,31 @@ var next = rectangle(2,5);
 
 console.log(next.getArea());
 console.log(next.getPermieter())
+
+
+---------
+function add() {
+  // console.log("hi", arguments);
+  // let args = [].slice.apply(arguments);
+  let args = Object.values(arguments);
+  // console.log("after ",args);
+  // console.log(args)
+  function resultFn() {
+    // args = args.concat([].slice.apply(arguments));
+    args = args.concat(Object.values(arguments));
+    // console.log(args)
+    if (args.length >= 3) {
+      // console.log(args);
+      
+      return args.slice(0,3).reduce(function(acc, next) {
+        return acc + next;
+      }, 0); //will only sum first 3 arguments
+    }
+    return resultFn;
+  }
+  return resultFn();
+}
+
+// console.log(add(2, 3, 4));
+console.log(add(5)(6)(7));
+// console.log(add(10, 20)(30));
